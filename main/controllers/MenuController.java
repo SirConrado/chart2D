@@ -1,6 +1,12 @@
 package controllers;
 
+import java.awt.Desktop;
+
+import java.io.File;
 import java.io.IOException;
+import java.util.logging.Level;
+
+import java.util.logging.Logger;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -13,12 +19,17 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import main.Main;
 
 public class MenuController {
 	private byte chartID = 1;
 	private MainController mainController;
+	protected Stage stage;
+	private Desktop desktop = Desktop.getDesktop();
+	protected File selectedFile;
 	
 	public byte getChartID() {
 		return chartID;
@@ -47,7 +58,7 @@ public class MenuController {
 		//Pane pane = null;
 		Parent root = (Parent)fxmlLoader.load();          
 		ChartController1 controller = fxmlLoader.<ChartController1>getController();
-		controller.setChartID(id);
+		//controller.setChartID(id);
 		Scene scene = new Scene(root);
 		Stage stage = new Stage();
 		stage.setScene(scene);
@@ -75,6 +86,33 @@ public class MenuController {
 	@FXML
 	public void exit() {
 		Platform.exit();
+	}
+    public void openFile(File file) {
+        try {
+            desktop.open(file);
+        } catch (IOException ex) {
+            Logger.getLogger(
+                FileChooser.class.getName()).log(
+                    Level.SEVERE, null, ex
+                );
+        }
+    }
+	@FXML
+	public void openGenerator(ActionEvent event) throws Exception{
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("GenerateChartScreen.fxml"));  
+		//Pane pane = null;
+		Parent root = (Parent)fxmlLoader.load();          
+		//ChartController1 controller = fxmlLoader.<ChartController1>getController();
+		//controller.setChartID(id);
+		Scene scene = new Scene(root);
+		Stage stage = new Stage();
+		stage.setScene(scene);
+		stage.setTitle("Wykresy 3D - wlasny wykres");
+		stage.show(); 
+		((Node)(event.getSource())).getScene().getWindow().hide();
+		//stage.show(); 
+		//
+	
 	}
 
 }

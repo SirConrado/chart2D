@@ -43,14 +43,11 @@ public class ChartController1{
 	private List <Double> wartosciSerii;
 	private List<XYChart.Series> xYchartSeries;
 	int counter;
-	private int chartID;
 	
-	public void setChartID(int chartID) {
-		this.chartID = chartID;
-	}
 	@FXML
 	private Pane anchorPane;
-	
+	@FXML
+	private BarChart<String,Number> bc1;
 	public Pane getAnchorPane() {
 		return anchorPane;
 	}
@@ -100,9 +97,9 @@ public class ChartController1{
 		else if(result.get() == buttonTypeCancel){
 			// do dorobienia
 		}
-		for(int i = 0 ; i < 3; i++){
+		//for(int i = 0 ; i < 3; i++){
 			etykiety.add((fileOpis.nextLine()));
-		}
+		//}
 		String line = null;
 		counter = 0;
 		while(file.hasNext()){
@@ -116,16 +113,13 @@ public class ChartController1{
 		loadChart();
 		
 	}
-	@FXML
-	private BarChart<String,Number> bc1;
+	
 	public <Int> void loadChart(){
 		
 				 final CategoryAxis xAxis = new CategoryAxis();
 	        final NumberAxis yAxis = new NumberAxis();
 	        final BarChart<String,Number> bc = bc1;
 	        bc.setTitle(etykiety.get(0));
-	        xAxis.setLabel(etykiety.get(1));       
-	        yAxis.setLabel(etykiety.get(2));
 	        xYchartSeries = new ArrayList<XYChart.Series>();
 	        for(int i = 0; i < counter; i++){
 	        	XYChart.Series tym = new XYChart.Series();

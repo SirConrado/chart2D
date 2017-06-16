@@ -24,7 +24,7 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Button defaultButton="true" mnemonicParsing="false" prefHeight="79.0" prefWidth="258.0" text="Generator wykresów" GridPane.columnIndex="1" GridPane.rowIndex="2">
+      <Button defaultButton="true" mnemonicParsing="false" onAction="#openGenerator" prefHeight="79.0" prefWidth="258.0" text="Generator wykresów" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <font>
             <Font size="14.0" />
          </font>
