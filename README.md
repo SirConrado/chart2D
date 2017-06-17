@@ -1,4 +1,4 @@
-Application in java (javafx) - generate 2d charts using csv and txt file.
+Application in java (javafx) - generate 2d charts using csv file.
 
 Feature:
 - example chart,
