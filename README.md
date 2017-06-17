@@ -1,7 +1,7 @@
 Application in java (javafx) - generate 2d charts using csv file.
 
 Feature:
-- example chart,
+- examples chart,
 - generate columnar chart (data from and csv).
 
 Planned Feature:
