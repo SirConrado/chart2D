@@ -86,11 +86,11 @@ public class ChartController1{
 			file = new Scanner(new File("2.csv"));
 			fileOpis = new Scanner(new File("2.txt"));
 		}
-		else if (result.get() == buttonTypeTwo){
+		else if (result.get() == buttonTypeThree){
 			file = new Scanner(new File("3.csv"));
 			fileOpis = new Scanner(new File("3.txt"));
 		}
-		else if (result.get() == buttonTypeTwo){
+		else if (result.get() == buttonTypeFour){
 			file = new Scanner(new File("4.csv"));
 			fileOpis = new Scanner(new File("4.txt"));
 		}
@@ -100,7 +100,6 @@ public class ChartController1{
 		//for(int i = 0 ; i < 3; i++){
 			etykiety.add((fileOpis.nextLine()));
 		//}
-		String line = null;
 		counter = 0;
 		while(file.hasNext()){
 			String linia = file.nextLine();
